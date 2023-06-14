@@ -1,0 +1,33 @@
+@import './main.scss';
+
+
+.main {
+    padding: 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $main-color;
+
+    .error {
+        font-weight: 500;
+
+        &-title {
+            font-size: 288px;
+            font-weight: 700;
+            margin: 0px;
+        }
+
+        &-subtitle {
+            font-size: 36px;
+        }
+
+        &-link {
+            color: $main-color;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 139px 0px;
+        }
+    }
+
+}
+
