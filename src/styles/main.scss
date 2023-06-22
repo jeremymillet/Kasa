@@ -4,12 +4,11 @@ $main-color: #FF6060;
 $text-color: #FFFFFF;
 $dark-color: #000000;
 
-$background-image-home:url('../asset/background-img-1.png');
-
 h1, h2, h3, h4, h5, h6,p{
     font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
 }
-
 
 .page{
     display: flex;

@@ -1,6 +1,4 @@
-@import './main.scss';
-
-
+@import '../../styles/main.scss';
 
 .header-container{
     display :flex;
@@ -18,6 +16,19 @@
         .active {
             text-decoration: underline;
         }
-}
+    }
+
+    @media (max-width:800px) {
+        padding: 20px 20px;
+        .header-img{
+            width: 145px;
+        }
+        nav{
+            .nav-item {
+                margin-left: 26px;
+                font-size: 12px;
+            }
+        }
+    }
 }
 

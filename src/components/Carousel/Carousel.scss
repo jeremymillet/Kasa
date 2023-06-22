@@ -1,0 +1,43 @@
+@import '../../styles/main.scss';
+
+.carousel{
+    width:90%;
+    margin-bottom:24px;
+    &-button-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 90%;
+        top: 330px;
+        z-index: 2;
+    }
+    &-img{
+        width: 100%;
+        border-radius: 25px;
+        object-fit:cover;
+        max-height:500px;
+    }
+    &-counter{
+        position: relative;
+        top: 200px;
+        color: $text-color;
+    }
+    &-previous-btn{
+        margin-left:20px;
+        cursor: pointer;
+       
+    }
+    &-next-btn{
+        margin-right:20px;
+        cursor: pointer;
+    }
+    &-overlay{
+        width: 90%;
+        height: 500px;
+        border-radius: 25px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(0, 0, 0, 0.5) 100%);
+        position: absolute;
+        z-index: 2;
+    }
+}

@@ -1,0 +1,57 @@
+@import '../../styles/main.scss';
+.info-container{
+    display: flex;
+    width: 90%;
+    color: $main-color;
+}
+.title-container{
+    margin-bottom: 20px;
+    h1{
+      font-size: 36px;  
+      margin: 0px;
+    }
+    h2{
+        font-size: 18px;
+        margin: 0px;
+    }
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 24px;
+}
+.profil{
+    &-container{
+        display: flex;
+    }
+    &-name{
+        width: 93px;
+        display: flex;
+        text-align: right;
+        margin-right: 10px;
+
+    }
+    &-picture{
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+    }
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.collapse-container {
+    display: flex;
+    width: 90%;
+    column-gap: 76px;
+}
