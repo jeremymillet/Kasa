@@ -14,7 +14,7 @@ const text = 'Chez vous, partout et ailleurs'
 
 function Home() {
     return (
-    <div>
+    <div className='home'>
         <Header />
         <div className='page'>
             <Hero text={text} img={HeroImgHome} />
