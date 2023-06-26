@@ -3,8 +3,6 @@ import './Carousel.scss';
 import Previous from '../../asset/previous.svg'
 import Next from '../../asset/next.svg'
 
-
-
 function Carousel({picture}) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

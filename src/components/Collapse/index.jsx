@@ -10,31 +10,66 @@ function Collapse({ title, description, collapseId, className }) {
     }
     setSelected(collapseId);
   };
-  return (
-    <div className={className === "market" ? "collapse market" : "collapse"}>
-      <div className="collapse-title" onClick={() => toggle(collapseId)}>
-        <h2>{title}</h2>
-        <span>
-          <img
-            className={
-              selected === collapseId ? "collapse-img down" : "collapse-img"
-            }
-            src={upArrow}
-            alt="fleche vers le bas"
-          />
-        </span>
+
+  if (collapseId === "equipments") {
+    return (
+      <div className="collapse market">
+        <div className="collapse-title" onClick={() => toggle(collapseId)}>
+          <h2>{title}</h2>
+          <span>
+            <img
+              className={
+                selected === collapseId ? "collapse-img down" : "collapse-img"
+              }
+              src={upArrow}
+              alt="fleche vers le bas"
+            />
+          </span>
+        </div>
+        <div
+          className={
+            selected === collapseId
+              ? "collapse-description show"
+              : "collapse-description"
+          }
+        >
+          <ul>
+            {description.equipments.map((equipement, index) => (
+              <li className={selected === collapseId ? "text" : ""} key={index}>
+                {equipement}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div
-        className={
-          selected === collapseId
-            ? "collapse-description show"
-            : "collapse-description"
-        }
-      >
-        <p className={selected === collapseId ? "text" : ""}>{description}</p>
+    );
+  } else {
+    return (
+      <div className={className === "market" ? "collapse market" : "collapse"}>
+        <div className="collapse-title" onClick={() => toggle(collapseId)}>
+          <h2>{title}</h2>
+          <span>
+            <img
+              className={
+                selected === collapseId ? "collapse-img down" : "collapse-img"
+              }
+              src={upArrow}
+              alt="fleche vers le bas"
+            />
+          </span>
+        </div>
+        <div
+          className={
+            selected === collapseId
+              ? "collapse-description show"
+              : "collapse-description"
+          }
+        >
+          <p className={selected === collapseId ? "text" : ""}>{description}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Collapse;

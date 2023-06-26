@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Collapse from "../../components/Collapse";
-import CollapseEquipement from "../../components/CollapseEquipement";
 import Tag from "../../components/Tag";
 import Star from "../../components/Star";
 import Carousel from "../../components/Carousel";
@@ -19,7 +18,7 @@ function Market({ logement }) {
     if (accLogement.length === 0) {
       navigate("/*");
     }
-  }, [accLogement]);
+  },);
 
   return (
     <div>
@@ -60,7 +59,7 @@ function Market({ logement }) {
                 title={"Description"}
                 description={accLogement[0].description}
               />
-              <CollapseEquipement
+              <Collapse
                 collapseId={"equipments"}
                 key={"equipement"}
                 title={"Equipements"}
