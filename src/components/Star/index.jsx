@@ -1,25 +1,34 @@
-import redStar from '../../asset/red-star.png'
-import greyStar from '../../asset/grey-star.png'
+import redStarImg from '../../asset/red-star.png'
+import greyStarImg from '../../asset/grey-star.png'
 import './Star.scss'
 
 
 function Star(accLogement) {
-    const etoileMax = 5
-    const etoile = accLogement.rating
-    const etoilegrise = etoileMax - accLogement.rating
+  const maxStars = 5;
+  var redStars = parseInt(accLogement.rating);
+  if (redStars > 5) {
+    redStars = 5
+  }
+  else if (redStars < 0) {
+    redStars = 0;
+  }
+  const greyStars = maxStars - redStars;
+    
+  const redStarsToDisplay = Array(redStars).fill().map((_,index) =>
+    <img key={index} src={redStarImg} alt="" />
+  
+  );
 
-     const etoilesRouges = Array.from({ length: etoile }, (_, index) => (
-        <img key={index} src={redStar} alt="" />
-     ));
-     const etoilesGris = Array.from({ length: etoilegrise }, (_, index) => (
-        <img  key={index} src={greyStar} alt="" /> 
+    const greyStarsToDisplay = Array.from({ length: greyStars }, (_, index) => (
+      <img key={index} src={greyStarImg} alt="" />
     ));
+    console.log(redStarsToDisplay);
     return (
-        <div className='star-container'>
-            {etoilesRouges}
-            {etoilesGris}
-        </div>
-    )
+      <div className="star-container">
+        {redStarsToDisplay}
+        {greyStarsToDisplay}
+      </div>
+    );
 }
 
 export default Star

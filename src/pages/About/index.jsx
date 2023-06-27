@@ -5,7 +5,6 @@ import HeroImgAbout from '../../asset/background-img-2.png'
 import React from 'react';
 import Collapse from '../../components/Collapse'
 
-const text = ''
 const dataCollapse = [
     {
         title: 'Fiabilité',
@@ -26,23 +25,24 @@ const dataCollapse = [
     }
 ]
 
-
-
 function About() {
     return (
-        <div>
-        <Header />
-        <div className='page'>
-                <Hero text={text} img={HeroImgAbout} />
-                {
-                    dataCollapse.map(({ title, description }, index) => (
-                        <Collapse collapseId={index} key={index} title={title} description={description} />
-                    ))
-                }
-        </div>
+      <div>
+        <Header from="about" />
+        <main className="page-containe">
+          <Hero  img={HeroImgAbout} />
+          {dataCollapse.map(({ title, description }, index) => (
+            <Collapse
+              collapseId={index}
+              key={index}
+              title={title}
+              description={description}
+            />
+          ))}
+        </main>
         <Footer />
-    </div>  
-    )
+      </div>
+    );
 }
 
 export default About

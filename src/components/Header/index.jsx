@@ -4,18 +4,28 @@ import './Header.scss'
 
 
 
-function Header() {
+function Header({ from }) {
     
-    
+    console.log(from)
     return (
-        <header className="header-container">
-            <img className='header-img' src={Logo} alt="Logo du site kasa" />
-            <nav>
-                <Link  className={'nav-item'} to={'/'}>Accueil</Link>
-                <Link  className={'nav-item'} to={'/About'}>A Propos</Link>
-            </nav>
-        </header>
-    )
+      <header className="header-container">
+        <img className="header-img" src={Logo} alt="Logo du site kasa" />
+        <nav>
+          <Link
+            className={`nav-item ${from === "home" ? "selected " : ""}`}
+            to={"/"}
+          >
+            Accueil
+          </Link>
+          <Link
+            className={`nav-item ${from === "about" ? "selected " : ""}`}
+            to={"/About"}
+          >
+            A Propos
+          </Link>
+        </nav>
+      </header>
+    );
 }
 
 export default Header

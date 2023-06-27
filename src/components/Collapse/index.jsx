@@ -13,25 +13,23 @@ function Collapse({ title, description, collapseId, className }) {
 
   if (collapseId === "equipments") {
     return (
-      <div className="collapse market">
+      <article className="collapse market">
         <div className="collapse-title" onClick={() => toggle(collapseId)}>
           <h2>{title}</h2>
           <span>
             <img
-              className={
-                selected === collapseId ? "collapse-img down" : "collapse-img"
-              }
+              className={`collapse-img ${
+                selected === collapseId ? "down" : ""
+              }`}
               src={upArrow}
               alt="fleche vers le bas"
             />
           </span>
         </div>
         <div
-          className={
-            selected === collapseId
-              ? "collapse-description show"
-              : "collapse-description"
-          }
+          className={`collapse-description ${
+            selected === collapseId ? "show" : ""
+          }`}
         >
           <ul>
             {description.equipments.map((equipement, index) => (
@@ -41,33 +39,31 @@ function Collapse({ title, description, collapseId, className }) {
             ))}
           </ul>
         </div>
-      </div>
+      </article>
     );
   } else {
     return (
-      <div className={className === "market" ? "collapse market" : "collapse"}>
+      <article className={`collapse ${className === "market" ? "market" : ""}`}>
         <div className="collapse-title" onClick={() => toggle(collapseId)}>
           <h2>{title}</h2>
           <span>
             <img
-              className={
-                selected === collapseId ? "collapse-img down" : "collapse-img"
-              }
+              className={`collapse-img ${
+                selected === collapseId ? " down" : ""
+              }`}
               src={upArrow}
               alt="fleche vers le bas"
             />
           </span>
         </div>
         <div
-          className={
-            selected === collapseId
-              ? "collapse-description show"
-              : "collapse-description"
-          }
+          className={`collapse-description ${
+            selected === collapseId ? " show" : ""
+          }`}
         >
           <p className={selected === collapseId ? "text" : ""}>{description}</p>
         </div>
-      </div>
+      </article>
     );
   }
 }

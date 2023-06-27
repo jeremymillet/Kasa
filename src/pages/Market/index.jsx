@@ -11,62 +11,62 @@ import Carousel from "../../components/Carousel";
 import "./Market.scss";
 
 function Market({ logement }) {
-  let params = useParams();
+  const params = useParams();
   const navigate = useNavigate();
-  const accLogement = logement.filter((objet) => objet.id === params.id);
+  const currentLodging = logement.filter((Lodging) => Lodging.id === params.id);
   useEffect(() => {
-    if (accLogement.length === 0) {
+    if (currentLodging.length === 0) {
       navigate("/*");
     }
   },);
 
   return (
     <div>
-      {accLogement.length === 0 ? null : (
+      {currentLodging.length === 0 ? null : (
         <div>
           <Header />
-          <div className="page">
-            <Carousel picture={accLogement[0].pictures} keys={"carousel"} />
-            <div className="info-container">
-              <div className="left">
+          <main className="page-containe">
+            <Carousel picture={currentLodging[0].pictures} keys={"carousel"} />
+            <section className="info-container">
+              <section className="left">
                 <div className="title-container">
-                  <h1>{accLogement[0].title}</h1>
-                  <h2>{accLogement[0].location}</h2>
+                  <h1>{currentLodging[0].title}</h1>
+                  <h2>{currentLodging[0].location}</h2>
                 </div>
                 <Tag
                   className="tag-container"
-                  tags={accLogement[0].tags}
+                  tags={currentLodging[0].tags}
                   keys={"tags"}
                 />
-              </div>
-              <div className="right">
+              </section>
+              <section className="right">
                 <div className="profil-container">
-                  <p className="profil-name">{accLogement[0].host.name}</p>
+                  <p className="profil-name">{currentLodging[0].host.name}</p>
                   <img
                     className="profil-picture"
-                    src={accLogement[0].host.picture}
+                    src={currentLodging[0].host.picture}
                     alt=""
                   />
                 </div>
-                <Star rating={accLogement[0].rating} />
-              </div>
-            </div>
-            <div className="collapse-container">
+                <Star rating={currentLodging[0].rating} />
+              </section>
+            </section>
+            <section className="collapse-container">
               <Collapse
                 className="market"
                 collapseId={"description"}
                 key={"description"}
                 title={"Description"}
-                description={accLogement[0].description}
+                description={currentLodging[0].description}
               />
               <Collapse
                 collapseId={"equipments"}
                 key={"equipement"}
                 title={"Equipements"}
-                description={accLogement[0]}
+                description={currentLodging[0]}
               />
-            </div>
-          </div>
+            </section>
+          </main>
           <Footer />
         </div>
       )}
