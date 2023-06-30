@@ -3,7 +3,10 @@ import "./Carousel.scss";
 import Previous from "../../asset/previous.svg";
 import Next from "../../asset/next.svg";
 
+
+
 function Carousel({ picture }) {
+  console.log(picture.length);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const goToNextImage = () => {
@@ -25,12 +28,11 @@ function Carousel({ picture }) {
           className={`carousel-img ${
             currentImageIndex === index ? "active" : ""
           }`}
-          /* picture[currentimageindex]*/
           src={image}
           alt="Carousel"
         />
       ))}
-      <div className="carousel-button-container">
+      <div className={`carousel-button-container ${picture.length === 1?'none':''} `}>
         <img
           className="carousel-previous-btn"
           onClick={goToPreviousImage}

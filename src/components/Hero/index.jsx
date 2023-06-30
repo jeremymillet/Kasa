@@ -2,19 +2,20 @@ import "./Hero.scss";
 import React from "react";
 
 function Hero(props) {
-  const img = props.img;
   return (
     <section className="hero">
       <div
         className={`hero-overlay ${
-          img === "/static/media/background-img-2.abab3f12f4cb82f1dfa1.png"
+          props.img ===
+          "/static/media/background-img-2.abab3f12f4cb82f1dfa1.png"
             ? "hero-overlay-about"
             : " "
         }`}
       ></div>
       <img
         className={`hero-img ${
-          img === "/static/media/background-img-2.abab3f12f4cb82f1dfa1.png"
+          props.img ===
+          "/static/media/background-img-2.abab3f12f4cb82f1dfa1.png"
             ? "hero-about"
             : ""
         }`}

@@ -12,5 +12,4 @@ function Tag({ tags }) {
     )
 }
 
-
 export default Tag

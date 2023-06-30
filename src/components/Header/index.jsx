@@ -5,14 +5,12 @@ import './Header.scss'
 
 
 function Header({ from }) {
-    
-    console.log(from)
     return (
       <header className="header-container">
         <img className="header-img" src={Logo} alt="Logo du site kasa" />
         <nav>
           <Link
-            className={`nav-item ${from === "home" ? "selected " : ""}`}
+            className={`nav-item ${from === "home" ? "selected" : ""}`}
             to={"/"}
           >
             Accueil
